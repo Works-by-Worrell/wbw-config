@@ -1,3 +1,6 @@
+---
+name: Definition of Read
+---
 # Definition of Ready
 
 ## 1. Terminology & Conformance (RFC-2119)

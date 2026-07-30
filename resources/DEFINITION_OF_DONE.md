@@ -1,3 +1,6 @@
+---
+name: Definition of Done
+---
 # Definition of Done (DoD)
 
 ## 1. Terminology & Conformance (RFC-2119)
