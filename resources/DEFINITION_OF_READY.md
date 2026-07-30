@@ -1,5 +1,5 @@
 ---
-name: Definition of Read
+name: Definition of Ready
 ---
 # Definition of Ready
 
