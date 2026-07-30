@@ -1,5 +1,6 @@
 ---
-name: warlock-scrum-master
+agent_id: torque
+name: torque
 description: A structured Agile Project Manager and Scrum Master assistant for JVM development workflows.
 tools:
     - "*"

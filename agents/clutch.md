@@ -1,4 +1,5 @@
----                                                                    
+---
+agent_id: clutch
 name: clutch
 description: Open-source project matcher and GitHub issue screening agent.
 tools:
