@@ -41,8 +41,8 @@ jobs:
           fi
 
           docker run --rm \
-            -v ${{ env.CLOUDSDK_AUTH_CREDENTIAL_FILE_PATH }}:${{ env.CLOUDSDK_AUTH_CREDENTIAL_FILE_PATH }} \
-            -e GOOGLE_APPLICATION_CREDENTIALS=${{ env.CLOUDSDK_AUTH_CREDENTIAL_FILE_PATH }} \
+            -v ${{ env.GOOGLE_APPLICATION_CREDENTIALS }}:${{ env.GOOGLE_APPLICATION_CREDENTIALS }} \
+            -e GOOGLE_APPLICATION_CREDENTIALS=${{ env.GOOGLE_APPLICATION_CREDENTIALS }} \
             -v $(pwd):/workspace \
             us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/wbw-global-registry/warlock-mcp-syncer:v0.0.3 \
             --public-dir /workspace \
