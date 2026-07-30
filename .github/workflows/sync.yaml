@@ -44,7 +44,7 @@ jobs:
             -v ${{ env.CLOUDSDK_AUTH_CREDENTIAL_FILE_PATH }}:${{ env.CLOUDSDK_AUTH_CREDENTIAL_FILE_PATH }} \
             -e GOOGLE_APPLICATION_CREDENTIALS=${{ env.CLOUDSDK_AUTH_CREDENTIAL_FILE_PATH }} \
             -v $(pwd):/workspace \
-            us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/wbw-global-registry/warlock-mcp-syncer:v0.0.2 \
+            us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/wbw-global-registry/warlock-mcp-syncer:v0.0.3 \
             --public-dir /workspace \
             --project-id ${{ secrets.GCP_PROJECT }} \
             --github-sha ${{ github.sha }} \
