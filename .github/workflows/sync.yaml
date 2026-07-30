@@ -1,0 +1,52 @@
+name: Public Config GitOps Sync
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  sync:
+    name: Validate and Ingest Public Configs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud via WIF
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Set Up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker Login
+        run: |
+          gcloud auth configure-docker us-central1-docker.pkg.dev --quiet
+
+      - name: Run Syncer Ingestion Container
+        run: |
+          # Determine if dry-run validation should be executed (on PRs)
+          DRY_RUN_FLAG=""
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            DRY_RUN_FLAG="--dry-run"
+          fi
+
+          docker run --rm \
+            -v ${{ env.GOOGLE_APPLICATION_CREDENTIALS }}:${{ env.GOOGLE_APPLICATION_CREDENTIALS }} \
+            -e GOOGLE_APPLICATION_CREDENTIALS=${{ env.GOOGLE_APPLICATION_CREDENTIALS }} \
+            -v $(pwd):/workspace \
+            us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/wbw-global-registry/warlock-mcp-syncer:v0.0.5 \
+            --database wbw-firestore-nprd \
+            --public-dir /workspace \
+            --project-id ${{ secrets.GCP_PROJECT }} \
+            --github-sha ${{ github.sha }} \
+            $DRY_RUN_FLAG
