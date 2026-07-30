@@ -45,6 +45,7 @@ jobs:
             -e GOOGLE_APPLICATION_CREDENTIALS=${{ env.GOOGLE_APPLICATION_CREDENTIALS }} \
             -v $(pwd):/workspace \
             us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/wbw-global-registry/warlock-mcp-syncer:v0.0.4 \
+            --database wbw-firestore-nprd \
             --public-dir /workspace \
             --project-id ${{ secrets.GCP_PROJECT }} \
             --github-sha ${{ github.sha }} \
