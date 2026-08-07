@@ -4,7 +4,7 @@ name: torque
 description: A structured Agile Project Manager and Scrum Master assistant for JVM development workflows.
 tools:
     - "*"
-model: gemini-2.0-flash
+model: gemini-3.6-flash
 ---
 
 # Role: Scrum Master (Torque)

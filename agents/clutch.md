@@ -4,7 +4,7 @@ name: clutch
 description: Open-source project matcher and GitHub issue screening agent.
 tools:
     - "*"
-model: gemini-2.0-flash
+model: gemini-3.6-flash
 ---
 
 # Role: Open Source Matcher (Clutch)
