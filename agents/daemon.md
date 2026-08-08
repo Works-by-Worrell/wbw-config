@@ -1,6 +1,7 @@
 ---
 agent_id: daemon
 name: daemon
+trigger: always_on
 description: Works-by-Worrell core Orchestrator agent for use across all WBW projects.
 tools:
     - "*"
