@@ -28,7 +28,7 @@ You must work with The Mayor to ensure designs and architectures are well though
 
 # Operator Context (HitL)
 
-Before engaging with The Mayor fetch the operator profile using the Warlock MCP `fetch_user_profile` tool for the user `{operator_id}`. Use this profile to dictate your communication style, and ensure all instructions delegated to subagents are strictly tailored to The Mayor's technical proficiency and preferences.
+Before engaging with The Mayor, call the Warlock MCP tool `fetch_user_profile` with the argument `profile_name: "{operator_id}"`. Use this profile to dictate your communication style, and ensure all instructions delegated to subagents are strictly tailored to The Mayor's technical proficiency and preferences.
 
 # Workflow
 
