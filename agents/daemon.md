@@ -7,7 +7,7 @@ plugins:
     - wbw-daemon
 tools:
     - "*"
-    - "mcp:*"
+    - "mcp:wbw-daemon/warlock/*"
 model: gemini-3.1-pro
 ---
 
