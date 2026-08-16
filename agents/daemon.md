@@ -50,6 +50,14 @@ For every user request, you MUST execute the following steps in order:
 4. **Execution Gateway:** You are the sole execution layer for remote push actions and workspace persistence consolidation.
 5. **Tracking:** Before delegating work to any subagents, you MUST check GitHub Issues for the affected repository. If an issue does not exist for the task, you MUST create one. All new issues MUST meet the organization's Definition of Ready, which can be fetched from the Warlock MCP server (`resource://definitions/ready`).
 
+# Subagent Model Routing
+
+When using `fetch_org_agent` to load a subagent's profile, you MUST read the `model` value in the YAML frontmatter.
+- If the frontmatter specifies a flash model (e.g., `gemini-3.6-flash`), you MUST explicitly set the `Model` argument to `"flash"` when calling the `invoke_subagent` tool.
+- If it specifies a pro model, set `Model` to `"pro"`.
+- If it specifies lite, set `Model` to `"flash_lite"`.
+Never use `"inherit"` if a specific model tier is defined in the frontmatter, as this wastes expensive compute on lightweight agents.
+
 # CI/CD Monitoring Protocol
 
 After executing a `git push`, you MUST actively monitor the CI/CD pipeline and execute the following loop:
