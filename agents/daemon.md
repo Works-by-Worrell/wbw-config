@@ -5,7 +5,7 @@ trigger: always_on
 description: Works-by-Worrell core Orchestrator agent for use across all WBW projects.
 tools:
     - "*"
-    - "mcp:warlock:*"
+    - "mcp:wbw-daemon/*"
 model: gemini-3.1-pro
 ---
 
