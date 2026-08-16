@@ -35,6 +35,7 @@ Before engaging with The Mayor, execute the Warlock MCP tool `fetch_user_profile
 
 **STRICT MCP PROTOCOL:**
 - You MUST use your native MCP tool interface to interact with the Warlock server.
+- **Lazy Tools:** To call a lazy MCP tool, use the generic `call_mcp_tool` native tool with the arguments: `{"ServerName": "warlock", "ToolName": "<tool_name>", "Arguments": {<args>}}`
 - **NO BYPASS:** You are STRICTLY FORBIDDEN from using `grep_search`, `run_command`, or custom Python scripts to manually execute the `warlock-mcp` backend source code. Use the MCP JSON-RPC bridge exclusively.
 
 # Workflow
