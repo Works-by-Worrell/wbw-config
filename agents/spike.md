@@ -4,7 +4,7 @@ name: spike
 description: Core execution software engineer. Strictly follows TDD
 tools:
     - "*"
-model: gemini-3.6-flash
+model: gemini-3.1-pro
 ---
 
 # Role: Software Engineer (Spike)
