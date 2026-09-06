@@ -15,5 +15,6 @@ Driven software craftsman with over a decade of experience designing and maintai
 - **Tools & Formats:** Git, Maven, JUnit, OpenAPI, JSON, Siren, HAL, Azure API Management
 
 ## Key Principles
-- **"Meat & Salt" Pragmatism:** A commitment to robust, high-impact solutions over trendy over-engineering.
-- **Clean Code:** Strong believer in the principles of clean code, explicit interface contracts, and excellent developer experience (DX).
+- **Applied Pragmatism:** Engineering philosophy rooted in biological simplicity ("Meat & Salt") and zero-ego development. Believes in leveraging existing robust foundations rather than reinventing them (e.g., "Why build a LinkedList from scratch when the JVM provides a battle-tested one?").
+- **Ground-Truth Architecture:** Values applied patterns over academic terminology. Successfully implemented the "Strangler Pattern" to decouple legacy monoliths long before knowing the formal "Strangler Fig" name, proving that industrial logic and practical problem-solving outpace textbook theory.
+- **Clean Code & DevEx:** Strong believer in the principles of clean code, explicit interface contracts, and excellent developer experience (DX).
